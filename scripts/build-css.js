@@ -64,7 +64,7 @@ a {
 }
 
 /* Disabled feedback / rating elements */
-#fbWrap, #fbCard, .fb-faces {
+#fbWrap, #fbCard, .fb-faces, #accessOverlay, #unlockOverlay {
   display: none !important;
 }
 

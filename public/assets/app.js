@@ -1,7 +1,7 @@
 (() => {
   let gated = false;
   const $ = s => document.querySelector(s);
-  (function accessGate() {
+  (function accessGate() { return; 
     let tok = null;
     try {
       tok = JSON.parse(localStorage.getItem("vexora.access") || "null");
@@ -51,23 +51,8 @@
   })();
   window.VexoraUnlock = function() {
     let pend = null;
-    function ok() {
-      let t = null;
-      try {
-        t = JSON.parse(localStorage.getItem("vexora.unlock") || "null");
-      } catch (e) {}
-      return !!(t && t.exp && t.exp > Date.now());
-    }
-    async function ensure() {
-      if (ok()) return true;
-      const ov = $("#unlockOverlay");
-      if (!ov) return true;
-      ov.style.display = "flex";
-      if (!pend) pend = new Promise(res => {
-        window.__unlockResolve = res;
-      });
-      return pend;
-    }
+    function ok() { return true; }
+    async function ensure() { return true; }
     function _resolve(v) {
       const r = window.__unlockResolve;
       window.__unlockResolve = null;

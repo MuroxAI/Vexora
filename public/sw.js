@@ -1,4 +1,4 @@
-const CACHE = "vexora-1709";
+const CACHE = "vexora-1710";
 
 const ASSETS = [ "./index.html", "./community.html", "./manifest.webmanifest", "./assets/app.css?v=1667", "./assets/app.js?v=1671", "./assets/live.js?v=1661", "./assets/vexora.js?v=1661", "./assets/i18n.js?v=1679", "./assets/consent.js?v=1661", "./assets/chat.js?v=1674", "./assets/extra.js?v=1661", "./assets/polish.js?v=1661", "./assets/tire.js?v=1661", "./assets/flasher.js?v=1661", "./assets/sim.js?v=1661", "./assets/logo.png", "./assets/mark.png", "./assets/favicon.png", ".assets/icon-192.png", "./assets/icon-512.png", "./assets/icon-maskable.png", "./assets/apple-touch-icon.png", "./cfw/assets/cfw.js?v=1666" ];
 
