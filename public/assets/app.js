@@ -2901,7 +2901,7 @@
     });
   })();
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
   }
   if (!navigator.bluetooth && $("#noBle")) $("#noBle").hidden = false;
   if ($("#appVer") && window.VEXORA) $("#appVer").textContent = VEXORA.app || VEXORA.vcu;

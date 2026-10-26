@@ -112,6 +112,7 @@ async function minifyInlineHtml(html) {
   let i = 0;
   for (const rel of OBFUSCATE) {
     const p = path.join(DST, rel);
+    if (!fs.existsSync(p)) continue;
     const src = fs.readFileSync(p, "utf8");
     const res = JavaScriptObfuscator.obfuscate(src, OBF_OPTS("f" + (i++) + "x"));
     fs.writeFileSync(p, res.getObfuscatedCode());
@@ -140,6 +141,7 @@ async function minifyInlineHtml(html) {
   // HTML: comentarios fuera + inline minificado
   for (const rel of ["index.html", "cfw/index.html", "forge/index.html", "404.html", "admin.html"]) {
     const p = path.join(DST, rel);
+    if (!fs.existsSync(p)) continue;
     let h = fs.readFileSync(p, "utf8");
     h = await minifyInlineHtml(h);
     fs.writeFileSync(p, h);

@@ -223,7 +223,7 @@
         p.then(function(perm) {
           if (perm !== "granted") return;
           navigator.serviceWorker.getRegistration("/").then(function(reg) {
-            var r2 = reg ? Promise.resolve(reg) : navigator.serviceWorker.register("/sw.js");
+            var r2 = reg ? Promise.resolve(reg) : navigator.serviceWorker.register("./sw.js");
             r2.then(function(reg2) {
               if (!reg2 || !reg2.pushManager) return;
               fetch("/api/push/key").then(function(r) {
