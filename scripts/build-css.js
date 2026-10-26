@@ -63,6 +63,11 @@ a {
   text-decoration: none;
 }
 
+/* Disabled feedback / rating elements */
+#fbWrap, #fbCard, .fb-faces {
+  display: none !important;
+}
+
 /* Base Buttons */
 .btn {
   display: inline-flex;

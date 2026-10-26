@@ -3197,7 +3197,7 @@
       b.classList.toggle("is-sel", !hover && !!rating && r === rating);
     });
   }
-  function openFb(isForced) {
+  function openFb(isForced) { return;
     const w = $("#fbWrap");
     if (!w) return;
     forced = !!isForced;
@@ -3334,7 +3334,5 @@
       setTimeout(() => clearInterval(t), 6e4);
     }
   }
-  if (lsGet("vexora.fbdone") !== "1") setTimeout(() => {
-    openFb(true);
-  }, 600);
+  /* fb popup disabled */
 })();
