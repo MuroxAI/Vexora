@@ -430,6 +430,33 @@ main.main {
   gap: 12px;
 }
 
+.card.fold > *:not(h3) {
+  display: none;
+}
+
+.card.fold.is-open > *:not(h3) {
+  display: flex;
+}
+
+.card.fold > h3 {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card.fold > h3::after {
+  content: '▼';
+  font-size: 10px;
+  color: var(--muted);
+  transition: transform .2s ease;
+}
+
+.card.fold.is-open > h3::after {
+  transform: rotate(180deg);
+}
+
 .card-title {
   font-size: 14px;
   font-weight: 700;
@@ -437,6 +464,121 @@ main.main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Controls (.ctrl), Range Sliders & Segmented buttons */
+.ctrl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px 12px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.ctrl label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ctrl .val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: right;
+}
+
+.ctrl input[type="range"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 6px 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--line-2);
+  outline: none;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+.seg {
+  display: flex;
+  background: var(--sunken);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  gap: 4px;
+  width: 100%;
+}
+
+.seg button {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.seg button:hover, .seg button.active, .seg button.is-on {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+/* Notes & Feedback messages */
+.note {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 6px;
+  background: var(--sunken);
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.note.err {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.note.ok {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 /* Form inputs & controls */
